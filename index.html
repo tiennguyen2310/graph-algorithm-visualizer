@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Cytoscape.js library -->
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Graph Algorithm Visualizer</h1>
+        <nav>
+            <select id="algorithm-select">
+                <option value="none" selected>Choose an Algorithm</option>
+                <option value="bfs">Breadth-First Search (BFS)</option>
+                <option value="dijkstra">Dijkstra's Shortest Path</option>
+                <option value="scc">Strongly Connected Components</option>
+                <option value="kruskal">Kruskal's MST</option>
+                <option value="maxflow">Max-Flow</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <div id="controls">
+            <h2>Graph Input</h2>
+            <textarea id="graph-input" placeholder="Enter graph edges, one per line. Format: u v [weight] (e.g., A B 5)"></textarea>
+            <div class="options">
+                <label><input type="checkbox" id="directed-checkbox"> Directed Graph</label>
+            </div>
+            <button id="draw-graph-btn">Draw Graph</button>
+            <hr>
+            <div id="algorithm-controls">
+                <!-- Algorithm-specific controls will be inserted here by JS -->
+            </div>
+        </div>
+
+        <div id="cy-container">
+            <div id="instructions">
+                <h2>Welcome!</h2>
+                <p>This tool is designed to help you visualize how different graph algorithms work. Follow the steps below to get started.</p>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>
+                        <strong>Input Your Graph:</strong> In the "Graph Input" text area on the left, define the connections (edges) of your graph.
+                        <ul>
+                            <li>For unweighted graphs, use the format <code>u v</code> (e.g., <code>A B</code>).</li>
+                            <li>For weighted graphs, use the format <code>u v w</code> (e.g., <code>A B 7</code>).</li>
+                            <li>Each edge should be on a new line.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Choose Graph Type:</strong> Check the "Directed Graph" box if you want edges to have a specific direction (A -> B).</li>
+                    <li><strong>Draw the Graph:</strong> Click the "Draw Graph" button to see your graph displayed in this area.</li>
+                    <li><strong>Select an Algorithm:</strong> Use the dropdown menu at the top to choose an algorithm to run on your graph.</li>
+                    <li><strong>Run and Visualize:</strong> Follow the specific instructions that appear for the chosen algorithm and see the visualization unfold!</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
