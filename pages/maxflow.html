@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max-Flow | Edmonds-Karp</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Max-Flow (Edmonds-Karp)</h1>
+        <nav>
+            <select onchange="location = this.value;">
+                <option value="../index.html">Back to Home</option>
+                <option value="scc.html">Strongly Connected Components</option>
+                <option value="maxflow.html" selected>Max-Flow (Edmonds-Karp)</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <div id="controls">
+            <h2>Graph Input</h2>
+            <textarea id="graph-input" placeholder="Enter directed, weighted edges.&#10;Format: u v capacity&#10;Example:&#10;S A 10&#10;S B 5&#10;A T 7&#10;B T 10"></textarea>
+            <div class="input-group">
+                <label for="source-node">Source Node:</label>
+                <input type="text" id="source-node" placeholder="e.g., S">
+            </div>
+            <div class="input-group">
+                <label for="sink-node">Sink Node:</label>
+                <input type="text" id="sink-node" placeholder="e.g., T">
+            </div>
+            <button id="run-btn">Calculate Max-Flow</button>
+            <hr>
+            <div id="results">
+                <h3>Results</h3>
+                <p>Max Flow: <span id="max-flow-result">--</span></p>
+            </div>
+        </div>
+
+        <div id="cy-container"></div>
+    </main>
+    <script src="../algorithms/maxflow.js"></script>
+</body>
+</html>

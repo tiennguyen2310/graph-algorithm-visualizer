@@ -90,3 +90,47 @@ main {
     padding-bottom: 0.5rem;
     margin-top: 1.5rem;
 }
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+#instructions ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#instructions li {
+    margin-bottom: 0.75rem;
+}
+
+.input-group {
+    margin: 1rem 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 0.5rem;
+}
+
+#results {
+    margin-top: 1rem;
+}
+
+#results p {
+    font-size: 1.1em;
+}
+
+#scc-list p {
+    margin: 4px 0;
+    font-family: monospace;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC | Kosaraju's Algorithm</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Strongly Connected Components (Kosaraju's)</h1>
+        <nav>
+            <select onchange="location = this.value;">
+                <option value="../index.html">Back to Home</option>
+                <option value="scc.html" selected>Strongly Connected Components</option>
+                <option value="maxflow.html">Max-Flow (Edmonds-Karp)</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <div id="controls">
+            <h2>Graph Input</h2>
+            <textarea id="graph-input" placeholder="Enter directed edges, one per line.&#10;Format: u v&#10;Example:&#10;A B&#10;B C&#10;C A&#10;C D"></textarea>
+            <button id="run-btn">Find and Color SCCs</button>
+            <hr>
+            <div id="results">
+                <h3>Results</h3>
+                <p>Number of SCCs: <span id="scc-count">--</span></p>
+                <div id="scc-list"></div>
+            </div>
+        </div>
+
+        <div id="cy-container"></div>
+    </main>
+    <script src="../algorithms/scc.js"></script>
+</body>
+</html>
