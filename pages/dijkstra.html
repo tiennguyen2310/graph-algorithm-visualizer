@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra's Shortest Path</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dijkstra's Shortest Path Algorithm</h1>
+        <nav>
+            <select onchange="location = this.value;">
+                <option value="../index.html">Back to Home</option>
+                <option value="dijkstra.html" selected>Dijkstra's Shortest Path</option>
+                <option value="scc.html">Strongly Connected Components</option>
+                <option value="maxflow.html">Max-Flow (Edmonds-Karp)</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <div id="controls">
+            <h2>Graph Input</h2>
+            <textarea id="graph-input" placeholder="Enter weighted edges.&#10;Format: u v weight&#10;Example:&#10;A B 7&#10;A C 9&#10;B C 10&#10;B D 15"></textarea>
+            <div class="input-group">
+                <label for="start-node">Start Node:</label>
+                <input type="text" id="start-node" placeholder="e.g., A">
+            </div>
+            <div class="options">
+                <label><input type="checkbox" id="directed-checkbox"> Directed Graph</label>
+            </div>
+            <button id="run-btn">Run Dijkstra</button>
+            <hr>
+            <div id="results">
+                <h3>Shortest Distances</h3>
+                <div id="distances-list"></div>
+            </div>
+        </div>
+
+        <div id="cy-container"></div>
+    </main>
+    <script src="../algorithms/dijkstra.js"></script>
+</body>
+</html>
