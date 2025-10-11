@@ -50,7 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 {
-                    selector: '.path',
+                    selector: 'node.path', // Style for NODES that are part of the path
+                    style: {
+                        'background-color': '#3cb44b',
+                        'transition-property': 'background-color',
+                        'transition-duration': '0.5s'
+                    }
+                },
+                {
+                    selector: 'edge.path', // Style for EDGES that are part of the path
                     style: {
                         'line-color': '#3cb44b',
                         'target-arrow-color': '#3cb44b',
@@ -59,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         'transition-duration': '0.5s'
                     }
                 }
+
             ]
         });
     }
@@ -126,13 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isDirected) {
                 if (!adj.has(v)) adj.set(v, []);
                 adj.get(v).push({ node: u, weight });
-                
-                // Add reverse edge for drawing if it doesn't exist
-                const reverseEdgeId = `${v}->${u}`;
-                 if (!edgeSet.has(reverseEdgeId)) {
-                    edges.push({ data: { id: reverseEdgeId, source: v, target: u, weight } });
-                    edgeSet.add(reverseEdgeId);
-                }
             }
         });
 
